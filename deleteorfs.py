@@ -6,14 +6,14 @@ __project__      = "deleteorfs"
 __author__    = "Witold Firlej (http://grizz.pl)"
 __license__   = "GPL"
 __copyright__ = "Witold Firlej"
-__version__ = "0.15"
+__version__ = "0.1"
 
 import glob,os
 print os.path.realpath(os.curdir)
 print os.curdir
 os.system("mkdir todelete") 						# being cerful is very important ;)
-for infile in glob.glob("*.[oO][rR][fF]"):
-	if not os.path.isfile(infile[:-4]+".[jJ][pP][gG]"):
+for infile in glob.glob("*.ORF"):
+	if not os.path.isfile(infile[:-4]+".JPG"):
 		print "deleting: "+infile[:-4]+".ORF" 			# [:-4] cutting extension
 		os.system("mv "+infile[:-4]+".ORF todelete/")
 print "\nDone!\n"
